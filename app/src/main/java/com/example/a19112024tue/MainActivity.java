@@ -1,11 +1,14 @@
 package com.example.a19112024tue;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,6 +35,17 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Are you sure?")
+                        .setMessage("Just make sure this is what you want :)")
+                        .setPositiveButton("Yes", null)
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Toast.makeText(MainActivity.this,"Nigger kys", Toast.LENGTH_LONG).show();
+                            }
+                        })
+                        .show();
                 EditText et = findViewById(R.id.editText);
                 String name = et.getText().toString();
                 SharedPreferences.Editor editor = sharedPreferences.edit();
